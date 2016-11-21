@@ -6,25 +6,7 @@ import { combineReducers } from "redux";
 
 import { todoReducer } from "./app/todo/index";
 import { Action } from "./shared/index";
-// import { appReducer } from "./app.reducer";
 import { AppState } from "./app.state";
-
-// const loggerMiddleware = createLogger();
-
-// function configureStore() {
-// 	return createStore<AppState>(
-// 		appReducer,
-// 		compose(
-// 			applyMiddleware(
-// 				thunkMiddleware,
-// 				loggerMiddleware
-// 			),
-// 			// window.devToolsExtension ? window.devToolsExtension() : undefined
-// 		)
-// 	);
-// }
-
-// export const reduxStore = configureStore();
 
 @autoinject
 export class AppStore {

@@ -10,7 +10,7 @@ http://aurelia.io/hub.html#/doc/article/aurelia/framework/latest/the-aurelia-cli
 npm install aurelia-cli -g
 ```
  
- ## Install
+## Install
  
  ```
  npm install
