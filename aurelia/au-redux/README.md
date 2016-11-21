@@ -25,7 +25,7 @@ au build --env stage
  
 ## Run/watch
 ```
-au run --w
+au run -w
 ```
 
  

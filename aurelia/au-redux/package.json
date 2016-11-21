@@ -1,16 +1,23 @@
 {
   "name": "au-redux",
-  "description": "An Aurelia client application.",
+  "description": "Aurelia redux client application.",
+  "author": "Clayton Lautier",
   "version": "0.1.0",
   "repository": {
-    "type": "???",
-    "url": "???"
+    "type": "git",
+    "url": "https://github.com/claylaut/experimental"
   },
   "license": "MIT",
   "dependencies": {
-    "aurelia-bootstrapper": "^1.0.1",
+    "@types/redux": "^3.6.31",
+    "@types/redux-logger": "^2.6.32",
+    "@types/redux-thunk": "^2.1.31",
     "aurelia-animator-css": "^1.0.1",
+    "aurelia-bootstrapper": "^1.0.1",
     "bluebird": "^3.4.6",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.7.4",
+    "redux-thunk": "^2.1.0",
     "requirejs": "^2.3.2",
     "text": "github:requirejs/text#latest"
   },
@@ -35,7 +42,7 @@
     "event-stream": "^3.3.4",
     "gulp-typescript": "^2.13.6",
     "gulp-tslint": "^7.0.0",
-    "tslint": "^4.0.1",
+    "tslint": "^3.15.1",
     "typescript": "^2.0.10",
     "typings": "^2.0.0",
     "jasmine-core": "^2.5.2",

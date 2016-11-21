@@ -1,3 +1,5 @@
 <template>
+  <require from="./app/todo/todo-list"></require>
   <h1>${message}</h1>
+  <todo-list todos.bind="todos" complete-callback.call="completeTodo($event)" if.bind="todos.length"></todo-list>
 </template>

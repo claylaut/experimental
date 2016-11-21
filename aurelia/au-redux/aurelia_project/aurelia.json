@@ -116,6 +116,21 @@
           "aurelia-templating-binding",
           "text",
           {
+            "name": "redux",
+            "path": "../node_modules/redux/dist",
+            "main": "redux"
+          },
+           {
+            "name": "redux-logger",
+            "path": "../node_modules/redux-logger/dist",
+            "main": "index"
+          },
+            {
+            "name": "redux-thunk",
+            "path": "../node_modules/redux-thunk/dist",
+            "main": "redux-thunk"
+          },
+          {
             "name": "aurelia-templating-resources",
             "path": "../node_modules/aurelia-templating-resources/dist/amd",
             "main": "aurelia-templating-resources"
