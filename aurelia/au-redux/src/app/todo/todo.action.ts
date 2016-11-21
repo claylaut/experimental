@@ -3,8 +3,8 @@ import { Action } from "../../shared/index";
 
 export const todoActionType = {
 	add: "todo:add",
-	complete: "todo:complete",
-	setVisibilityFilter: "todo:set-visibility-filter"
+	remove: "todo:remove",
+	toggleVisibility: "todo:toggle-visibility"
 };
 
 export class TodoAction {
@@ -19,17 +19,17 @@ export class TodoAction {
 		};
 	}
 
-	completeTodo(index: number): Action {
+	remove(payload: Todo): Action {
 		return {
-			type: todoActionType.complete,
-			payload: index
+			type: todoActionType.remove,
+			payload: payload
 		};
 	}
 
-	setVisibilityFilter(filter: any): Action{
+	toggleVisibility(payload: Todo): Action {
 		return {
-			type: todoActionType.setVisibilityFilter,
-			payload: filter
+			type: todoActionType.toggleVisibility,
+			payload: payload
 		};
 	}
 

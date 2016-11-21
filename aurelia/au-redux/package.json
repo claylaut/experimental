@@ -1,6 +1,6 @@
 {
   "name": "au-redux",
-  "description": "Aurelia redux client application.",
+  "description": "Aurelia redux sample.",
   "author": "Clayton Lautier",
   "version": "0.1.0",
   "repository": {
@@ -9,12 +9,14 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@types/lodash": "^4.14.39",
     "@types/redux": "^3.6.31",
     "@types/redux-logger": "^2.6.32",
     "@types/redux-thunk": "^2.1.31",
     "aurelia-animator-css": "^1.0.1",
     "aurelia-bootstrapper": "^1.0.1",
     "bluebird": "^3.4.6",
+    "lodash": "^4.17.2",
     "redux": "^3.6.0",
     "redux-logger": "^2.7.4",
     "redux-thunk": "^2.1.0",

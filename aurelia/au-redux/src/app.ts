@@ -9,6 +9,8 @@ export class App {
 	message = "Aurelia Redux!";
 	todos: Todo[] = [];
 
+	private counter = 0;
+
 	constructor(
 		private action: TodoAction,
 		private selector: TodoSelector,
@@ -19,5 +21,10 @@ export class App {
 	activate() {
 		this.store.dispatch(this.action.add("hello"));
 		this.todos = this.selector.getAll();
+	}
+
+	addItem() {
+		this.counter++;
+		this.store.dispatch(this.action.add(`hello ${this.counter}`));
 	}
 }
