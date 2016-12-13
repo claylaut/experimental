@@ -6,8 +6,7 @@ import * as createLogger from "redux-logger";
 import { combineReducers } from "redux";
 
 import { todoReducer } from "./app/todo/todo.reducer";
-import { TodoEpic } from "./app/todo/todo.epic";
-
+ import { TodoEpic } from "./app/todo/todo.epic";
 import { AppState } from "./app.state";
 
 @autoinject

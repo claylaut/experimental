@@ -1,26 +1,20 @@
 import { autoinject } from "aurelia-framework";
-import { createStore, applyMiddleware, compose, Store } from "redux";
-import { combineEpics, createEpicMiddleware } from "redux-observable";
-// import { composeWithDevTools } from "redux-devtools-extension";
-import * as createLogger from "redux-logger";
-import { combineReducers } from "redux";
+import { Store } from "redux";
 
-import { todoReducer } from "./app/todo/todo.reducer";
-import { TodoEpic } from "./app/todo/todo.epic";
 import { Action } from "./shared/index";
 import { AppState } from "./app.state";
+import { AppBootstrap } from "./app.bootstrap";
 
 @autoinject
 export class AppStore {
 
 	private store: Store<AppState>;
-	private loggerMiddleware = createLogger();
 
 	constructor(
-		private todoEpic: TodoEpic
+		private bootstrap: AppBootstrap
 	) {
 		console.warn("AppStore ctor::init");
-		this.store = this.configureStore();
+		this.store = this.bootstrap.configureStore();
 	}
 
 	getState() {
@@ -29,42 +23,6 @@ export class AppStore {
 
 	dispatch(item: Action) {
 		this.store.dispatch(item);
-	}
-
-
-	private configureStore() {
-		const rootEpic = combineEpics(
-			...this.todoEpic.epics
-		);
-
-		// const composeEnhancers = composeWithDevTools({
-		// 	// Specify here name, actionsBlacklist, actionsCreators and other options
-		// });
-
-		return createStore<AppState>(
-			combineReducers<AppState>({
-				todo: todoReducer
-			}),
-			// composeEnhancers(
-			applyMiddleware(
-				createEpicMiddleware(rootEpic),
-				this.loggerMiddleware
-			)
-			// ),
-		);
-
-		// return createStore<AppState>(
-		// 	combineReducers<AppState>({
-		// 		todo: todoReducer
-		// 	}),
-		// 	compose(
-		// 		applyMiddleware(
-		// 			createEpicMiddleware(rootEpic),
-		// 			this.loggerMiddleware
-		// 		),
-		// 		// window.devToolsExtension ? window.devToolsExtension() : undefined
-		// 	)
-		// );
 	}
 
 }
