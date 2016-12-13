@@ -7,7 +7,8 @@ export class TodoSelector {
 
 	constructor(
 		private store: AppStore
-	) { }
+	) {
+	}
 
 	getAll() {
 		const state = this.store.getState();

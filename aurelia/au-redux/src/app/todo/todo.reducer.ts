@@ -16,6 +16,10 @@ export function todoReducer(state = initialState, action: Action): TodoState {
 			newState.items.push(item);
 			return newState;
 		}
+		case todoActionType.addComplete: {
+			console.log("todoReducer :: addComplete triggered!");
+			return state;
+		}
 		case todoActionType.remove: {
 			let item = action.payload as Todo;
 			let newState = Object.assign({}, state) as TodoState;

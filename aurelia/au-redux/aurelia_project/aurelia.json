@@ -115,6 +115,8 @@
           "aurelia-templating",
           "aurelia-templating-binding",
           "text",
+          "lodash",
+          "redux-devtools-extension",
           {
             "name": "redux",
             "path": "../node_modules/redux/dist",
@@ -125,10 +127,15 @@
             "path": "../node_modules/redux-logger/dist",
             "main": "index"
           },
-            {
-            "name": "redux-thunk",
-            "path": "../node_modules/redux-thunk/dist",
-            "main": "redux-thunk"
+           {
+            "name": "redux-observable",
+            "path": "../node_modules/redux-observable/dist",
+            "main": "redux-observable"
+          },
+           {
+            "name": "rxjs",
+            "path": "../node_modules/rxjs",
+            "main": "rx"
           },
           {
             "name": "aurelia-templating-resources",
@@ -145,11 +152,6 @@
             "path": "../node_modules/aurelia-testing/dist/amd",
             "main": "aurelia-testing",
             "env": "dev"
-          },
-          {
-            "name": "lodash",
-            "path": "../node_modules/lodash",
-            "main": "lodash"
           }
         ]
       }
