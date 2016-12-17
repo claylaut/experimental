@@ -3,7 +3,7 @@ import { Store } from "redux";
 
 import { Action } from "./shared/index";
 import { AppState } from "./app.state";
-import { AppBootstrap } from "./app.bootstrap";
+import { AppStoreConfig } from "./app-store.config";
 
 @autoinject
 export class AppStore {
@@ -11,10 +11,10 @@ export class AppStore {
 	private store: Store<AppState>;
 
 	constructor(
-		private bootstrap: AppBootstrap
+		private storeConfig: AppStoreConfig
 	) {
 		console.warn("AppStore ctor::init");
-		this.store = this.bootstrap.configureStore();
+		this.store = this.storeConfig.configure();
 	}
 
 	getState() {

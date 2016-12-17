@@ -11,8 +11,8 @@ const initialState: TodoState = {
 export function todoReducer(state = initialState, action: Action): TodoState {
 	switch (action.type) {
 		case todoActionType.add: {
-			let item = action.payload as Todo;
-			let newState = Object.assign({}, state) as TodoState;
+			const item = action.payload as Todo;
+			const newState = { ...state };
 			newState.items.push(item);
 			return newState;
 		}
@@ -21,15 +21,15 @@ export function todoReducer(state = initialState, action: Action): TodoState {
 			return state;
 		}
 		case todoActionType.remove: {
-			let item = action.payload as Todo;
-			let newState = Object.assign({}, state) as TodoState;
+			const item = action.payload as Todo;
+			const newState = { ...state };
 			newState.items = _.reject(newState.items, { name: item.name });
 			return newState;
 		}
 		case todoActionType.toggleVisibility: {
-			let item = action.payload as Todo;
-			let newState = Object.assign({}, state) as TodoState;
-			let result = _.find(newState.items, { name: item.name });
+			const item = action.payload as Todo;
+			const newState = { ...state };
+			const result = _.find(newState.items, { name: item.name });
 			result.isCompleted = item.isCompleted;
 			return newState;
 		}
