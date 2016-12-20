@@ -5,9 +5,7 @@ import { Action } from "../../shared/index";
 
 export const todoActionType = {
 	add: "todo:add",
-	addComplete: "todo:add:complete",
-	remove: "todo:remove",
-	toggleVisibility: "todo:toggle-visibility"
+	addComplete: "todo:add:complete"
 };
 
 @autoinject
@@ -30,20 +28,6 @@ export class TodoAction {
 				name: payload,
 				isCompleted: false
 			} as Todo
-		};
-	}
-
-	remove(payload: Todo): Action {
-		return {
-			type: todoActionType.remove,
-			payload: payload
-		};
-	}
-
-	toggleVisibility(payload: Todo): Action {
-		return {
-			type: todoActionType.toggleVisibility,
-			payload: payload
 		};
 	}
 

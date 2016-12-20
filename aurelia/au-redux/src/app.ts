@@ -27,4 +27,9 @@ export class App {
 		this.counter++;
 		this.store.dispatch(this.action.add(`hello ${this.counter}`));
 	}
+
+	completeTodo() {
+		console.log("completeTodo triggered");
+	}
+
 }

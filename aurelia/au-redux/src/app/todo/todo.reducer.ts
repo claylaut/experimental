@@ -20,20 +20,8 @@ export function todoReducer(state = initialState, action: Action): TodoState {
 			console.log("todoReducer :: addComplete triggered!");
 			return state;
 		}
-		case todoActionType.remove: {
-			const item = action.payload as Todo;
-			const newState = { ...state };
-			newState.items = _.reject(newState.items, { name: item.name });
-			return newState;
-		}
-		case todoActionType.toggleVisibility: {
-			const item = action.payload as Todo;
-			const newState = { ...state };
-			const result = _.find(newState.items, { name: item.name });
-			result.isCompleted = item.isCompleted;
-			return newState;
-		}
-		default:
+		default: {
 			return state;
+		}
 	}
 }
